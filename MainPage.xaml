@@ -3,20 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Barker_AI.MainPage">
 
-    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-        <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
-            <Entry x:Name="edtPrompt" HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="btnClickMe" HorizontalOptions="End" Text="Click" Clicked="btnClickMe_Clicked"/>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                <Entry x:Name="edtPrompt" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="btnClickMe" HorizontalOptions="End" Text="Click" Clicked="btnClickMe_Clicked"/>
+            </StackLayout>
+
+            <ContentView VerticalOptions="FillAndExpand">
+                <ContentView.Content>
+                    <CollectionView x:Name="cvImages" Margin="20">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="2" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Image x:Name="img1" Source="{Binding .}" Margin="10"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ContentView.Content>
+            </ContentView>
         </StackLayout>
-
-        <CollectionView x:Name="cvImages" Margin="20" IsVisible="false" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Image x:Name="img1" Source="{Binding .}"/>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </AbsoluteLayout>
+    </StackLayout>
 
 </ContentPage>
