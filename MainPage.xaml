@@ -5,22 +5,26 @@
 
     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10" Spacing="10">
             <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
                 <Entry x:Name="edtPrompt" HorizontalOptions="FillAndExpand"/>
                 <Button x:Name="btnClickMe" HorizontalOptions="End" Text="Click" Clicked="btnClickMe_Clicked"/>
             </StackLayout>
 
-            <ContentView VerticalOptions="FillAndExpand">
+            <ContentView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <ContentView.Content>
-                    <CollectionView x:Name="cvImages" Margin="20">
+                    <CollectionView x:Name="cvImages" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                         <CollectionView.ItemsLayout>
-                            <GridItemsLayout Orientation="Vertical" Span="2" />
+                            <GridItemsLayout Orientation="Vertical">
+                                <GridItemsLayout.Span>
+                                    <OnPlatform Default="2" UWP="4"/>
+                                </GridItemsLayout.Span>
+                            </GridItemsLayout>
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <StackLayout>
-                                    <Image x:Name="img1" Source="{Binding .}" Margin="10"/>
+                                    <Image Source="{Binding .}" Margin="10"/>
                                 </StackLayout>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
