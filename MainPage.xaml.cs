@@ -7,7 +7,16 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-        cvImages.ItemsSource = App.GetAllFiles();
+    }
+
+    //OnAppearing Method that will only load its contents once
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        if (cvImages.ItemsSource == null)
+        {
+            cvImages.ItemsSource = App.GetAllFiles();
+        }
     }
 
     private async void btnClickMe_Clicked(object sender, EventArgs e)
@@ -20,4 +29,3 @@ public partial class MainPage : ContentPage
         cvImages.IsVisible= true;
     }
 }
-

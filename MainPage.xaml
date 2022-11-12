@@ -15,11 +15,7 @@
                 <ContentView.Content>
                     <CollectionView x:Name="cvImages" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                         <CollectionView.ItemsLayout>
-                            <GridItemsLayout Orientation="Vertical">
-                                <GridItemsLayout.Span>
-                                    <OnPlatform Default="2" UWP="4"/>
-                                </GridItemsLayout.Span>
-                            </GridItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="4"/>
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>

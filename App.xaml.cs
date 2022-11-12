@@ -14,12 +14,12 @@ public partial class App : Application
         string mainDir = FileSystem.Current.AppDataDirectory;
         var paths = Directory.GetDirectories(mainDir).ToList();
 
-        var docs = new List<string>();
+        var filepaths = new List<string>();
         foreach (var path in paths)
         {
-            docs.AddRange(Directory.GetFiles(path));
+            filepaths.AddRange(Directory.GetFiles(path));
         }
-
-        return docs;
+        
+        return filepaths.OrderByDescending(f => File.GetCreationTime(f)).ToList();
     }
 }
