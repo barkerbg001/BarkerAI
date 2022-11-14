@@ -8,8 +8,7 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
     }
-
-    //OnAppearing Method that will only load its contents once
+    
     protected override void OnAppearing()
     {
         base.OnAppearing();
@@ -27,5 +26,10 @@ public partial class MainPage : ContentPage
         await serv.DownloadGalleryAsync(edtPrompt.Text, filePath);
         cvImages.ItemsSource= App.GetAllFiles();
         cvImages.IsVisible= true;
+    }
+
+    private void cvImages_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
+    {
+
     }
 }

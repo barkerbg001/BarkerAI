@@ -5,10 +5,11 @@
              x:Class="Barker_AI.App">
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-            </ResourceDictionary.MergedDictionaries>
+            <Color x:Key="DarkLiver">#483C46</Color>
+            <Color x:Key="Ming">#3C6E71</Color>
+            <Color x:Key="BudGreen">#70AE6E</Color>
+            <Color x:Key="Inchworm">#BEEE62</Color>
+            <Color x:Key="Mandarin">#F4743B</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

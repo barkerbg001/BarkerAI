@@ -4,16 +4,15 @@
              x:Class="Barker_AI.MainPage">
 
     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10" Spacing="10">
-            <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="10">
                 <Entry x:Name="edtPrompt" HorizontalOptions="FillAndExpand"/>
-                <Button x:Name="btnClickMe" HorizontalOptions="End" Text="Click" Clicked="btnClickMe_Clicked"/>
+                <Button x:Name="btnClickMe" HorizontalOptions="FillAndExpand" Text="Click" Clicked="btnClickMe_Clicked"/>
             </StackLayout>
 
             <ContentView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <ContentView.Content>
-                    <CollectionView x:Name="cvImages" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <CollectionView x:Name="cvImages" SelectionMode="Single" SelectionChanged="cvImages_SelectionChanged" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout Orientation="Vertical" Span="4"/>
                         </CollectionView.ItemsLayout>
